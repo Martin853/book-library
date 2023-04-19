@@ -19,7 +19,7 @@
   align-items: center;
 }
 
-.action > button {
+.link {
   border: 1px white solid;
   border-radius: 15px;
   outline: none;
@@ -28,9 +28,10 @@
   font-size: 1.2rem;
   padding: 0.5rem 0.8rem 0.5rem 0.8rem;
   transition: background-color 0.4s ease;
+  text-decoration: none;
 }
 
-.action > button:hover {
+.link:hover {
   background-color: rgba(44, 104, 36, 0.5);
   cursor: pointer;
   transition: background-color 0.4s ease;
