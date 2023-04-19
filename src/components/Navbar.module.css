@@ -1,0 +1,57 @@
+.nav {
+  height: 64px;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav > h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.action {
+  width: 25%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.action > button {
+  border: 1px white solid;
+  border-radius: 15px;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  font-size: 1.2rem;
+  padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+  transition: background-color 0.4s ease;
+}
+
+.action > button:hover {
+  background-color: rgba(44, 104, 36, 0.5);
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+.search-div {
+  width: 50%;
+  height: 2rem;
+  border-radius: 15px;
+  background-color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.search-div > input {
+  width: 80%;
+  height: 80%;
+  outline: none;
+  border: none;
+  margin-left: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+}
