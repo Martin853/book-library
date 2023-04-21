@@ -1,3 +1,9 @@
+import { BookCard } from '../components/BookCard';
+
 export const BooksSection = () => {
-  return <div>BooksSection</div>;
+  return (
+    <div id="book-section-container">
+      <BookCard />
+    </div>
+  );
 };

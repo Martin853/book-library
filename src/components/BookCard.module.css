@@ -1,0 +1,38 @@
+.div {
+  height: 300px;
+  width: 300px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(228, 223, 223, 0.5);
+  border: 2px solid var(--secondary-color);
+  border-radius: 10px;
+}
+
+.div > img {
+  width: 200px;
+  height: 150px;
+}
+
+.div > h1 {
+}
+
+.div > button {
+  background-color: transparent;
+  border: 2px solid var(--secondary-color);
+  border-radius: 10px;
+  width: 85%;
+  height: 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  outline: none;
+  transition: background-color 0.4s ease;
+}
+
+.div > button:hover {
+  cursor: pointer;
+  background-color: var(--secondary-color);
+  transition: background-color 0.4s ease;
+}

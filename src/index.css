@@ -23,3 +23,12 @@ body {
 #root > div {
   height: 100%;
 }
+
+#book-section-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 350px);
+  grid-auto-rows: 350px;
+  justify-content: center;
+  align-items: center;
+}
