@@ -1,5 +1,5 @@
 .div {
-  height: 300px;
+  height: 150px;
   width: 300px;
   margin: auto;
   display: flex;
@@ -35,4 +35,9 @@
   cursor: pointer;
   background-color: var(--secondary-color);
   transition: background-color 0.4s ease;
+}
+
+.div > h1 {
+  font-size: 16px;
+  text-align: center;
 }
