@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { BookCard } from '../components/BookCard';
 
-export const BooksSection = () => {
+export const BooksSection = (props) => {
   const [booksData, setBooksData] = useState([]);
+  const searchTerm = props.searchQuery;
 
   useEffect(() => {
     fetch(
@@ -11,13 +12,20 @@ export const BooksSection = () => {
       .then((res) => res.json())
       .then((data) => {
         setBooksData(data.results);
-        console.log(data.results);
       });
   }, []);
 
+  const filteredBooks = booksData.filter((book) => {
+    if (searchTerm === '') {
+      return true;
+    }
+
+    return book.book_details[0].title.toLowerCase().includes(searchTerm);
+  });
+
   return (
     <div id="book-section-container">
-      {booksData.map((book) => (
+      {filteredBooks.map((book) => (
         <BookCard
           key={book.book_details[0].primary_isbn13}
           title={book.book_details[0].title}

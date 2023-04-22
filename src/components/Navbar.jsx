@@ -3,12 +3,18 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
-export const Navbar = () => {
+export const Navbar = (props) => {
   return (
     <nav className={classes.nav}>
       <h1>Book Library</h1>
       <div className={classes['search-div']}>
-        <input type="text" placeholder="Search for a book..." />
+        <input
+          type="text"
+          placeholder="Search for a book..."
+          onChange={(event) => {
+            props.setSearchQuery(event.target.value);
+          }}
+        />
       </div>
       <div className={classes.action}>
         <Link className={classes.link} to="/">
