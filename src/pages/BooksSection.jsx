@@ -20,7 +20,9 @@ export const BooksSection = (props) => {
       return true;
     }
 
-    return book.book_details[0].title.toLowerCase().includes(searchTerm);
+    return book.book_details[0].title
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
   });
 
   return (
