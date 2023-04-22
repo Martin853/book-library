@@ -22,7 +22,7 @@ export const BooksSection = (props) => {
 
     return book.book_details[0].title
       .toLowerCase()
-      .includes(searchTerm.toLowerCase());
+      .includes(searchTerm.toLowerCase().trim());
   });
 
   return (
