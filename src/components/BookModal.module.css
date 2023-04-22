@@ -1,0 +1,82 @@
+.modal,
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  z-index: 100;
+  width: 500px;
+  height: 300px;
+  background-color: rgba(228, 223, 223);
+  border: 3px solid var(--primary-color);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  gap: 1rem;
+}
+
+.modal-content > h2,
+p {
+  margin: 0;
+}
+
+.button {
+  background-color: transparent;
+  border: 2px solid var(--secondary-color);
+  border-radius: 10px;
+  width: 50%;
+  height: 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  outline: none;
+  transition: background-color 0.4s ease;
+  align-self: center;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: var(--secondary-color);
+  transition: background-color 0.4s ease;
+}
+
+.group-div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.group-div > button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.group-div > h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.close-button:hover {
+  cursor: pointer;
+}

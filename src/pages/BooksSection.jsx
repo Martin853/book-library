@@ -21,6 +21,9 @@ export const BooksSection = () => {
         <BookCard
           key={book.book_details[0].primary_isbn13}
           title={book.book_details[0].title}
+          author={book.book_details[0].author}
+          description={book.book_details[0].description}
+          price={book.book_details[0].price}
         />
       ))}
     </div>
