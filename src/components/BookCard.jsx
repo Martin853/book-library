@@ -9,13 +9,6 @@ export const BookCard = (props) => {
     setModal(!modal);
   };
 
-  const randomPrice = () => {
-    const min = 10;
-    const max = 20;
-
-    return (Math.random() * (max - min) + min).toFixed(2);
-  };
-
   return (
     <>
       <div className={classes.div}>
@@ -28,9 +21,9 @@ export const BookCard = (props) => {
           title={props.title}
           author={props.author}
           description={props.description}
+          price={props.price}
           state={modal}
           setState={setModal}
-          price={randomPrice()}
         />
       )}
     </>

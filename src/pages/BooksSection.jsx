@@ -12,6 +12,7 @@ export const BooksSection = (props) => {
       .then((res) => res.json())
       .then((data) => {
         setBooksData(data.results);
+        console.log(data.results);
       });
   }, []);
 
@@ -25,6 +26,12 @@ export const BooksSection = (props) => {
       .includes(searchTerm.toLowerCase().trim());
   });
 
+  const randomPrice = () => {
+    const min = 10;
+    const max = 20;
+    return (Math.random() * (max - min) + min).toFixed(2);
+  };
+
   return (
     <div id="book-section-container">
       {filteredBooks.map((book) => (
@@ -33,7 +40,7 @@ export const BooksSection = (props) => {
           title={book.book_details[0].title}
           author={book.book_details[0].author}
           description={book.book_details[0].description}
-          price={book.book_details[0].price}
+          price={randomPrice()}
         />
       ))}
     </div>
