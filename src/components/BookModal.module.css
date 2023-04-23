@@ -22,7 +22,8 @@
 .modal-content {
   z-index: 100;
   width: 500px;
-  height: 300px;
+  min-height: 300px;
+  padding: 1.5rem;
   background-color: rgba(228, 223, 223);
   border: 3px solid var(--primary-color);
   border-radius: 10px;
@@ -79,4 +80,8 @@ p {
 
 .close-button:hover {
   cursor: pointer;
+}
+
+.description {
+  font-size: 14px;
 }

@@ -24,7 +24,7 @@ export const BookModal = (props) => {
           </button>
         </div>
         <h2>By {props.author}</h2>
-        <p>{props.description}</p>
+        <p className={classes.description}>{props.description}</p>
         <p>Price: ${props.price}</p>
         <button className={classes.button}>Add to Cart</button>
       </div>

@@ -7,12 +7,15 @@ export const BooksSection = (props) => {
 
   useEffect(() => {
     fetch(
-      'https://api.nytimes.com/svc/books/v3/lists.json?list-name=hardcover-fiction&api-key=NwI4tENoOvmQiOl8Pml4TTcdD90O1oj7'
+      'https://www.googleapis.com/books/v1/volumes?q=subject:fiction&maxResults=15&country=US&key=AIzaSyCOdBW17XswV2lIzACKPq0HCsyaXT7QhWI'
     )
       .then((res) => res.json())
       .then((data) => {
-        setBooksData(data.results);
-        console.log(data.results);
+        const books = data.items.filter(
+          (book) => book.saleInfo.saleability !== 'NOT_FOR_SALE'
+        );
+        setBooksData(books);
+        console.log(books);
       });
   }, []);
 
@@ -20,27 +23,21 @@ export const BooksSection = (props) => {
     if (searchTerm === '') {
       return true;
     }
-
-    return book.book_details[0].title
+    return book.volumeInfo.title
       .toLowerCase()
       .includes(searchTerm.toLowerCase().trim());
   });
-
-  const randomPrice = () => {
-    const min = 10;
-    const max = 20;
-    return (Math.random() * (max - min) + min).toFixed(2);
-  };
 
   return (
     <div id="book-section-container">
       {filteredBooks.map((book) => (
         <BookCard
-          key={book.book_details[0].primary_isbn13}
-          title={book.book_details[0].title}
-          author={book.book_details[0].author}
-          description={book.book_details[0].description}
-          price={randomPrice()}
+          key={book.id}
+          title={book.volumeInfo.title}
+          author={book.volumeInfo.authors['0']}
+          description={book.volumeInfo.description}
+          price={book.saleInfo.listPrice.amount}
+          image={book.volumeInfo.imageLinks.smallThumbnail}
         />
       ))}
     </div>

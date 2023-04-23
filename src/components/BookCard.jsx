@@ -12,6 +12,7 @@ export const BookCard = (props) => {
   return (
     <>
       <div className={classes.div}>
+        <img src={props.image} />
         <h1>{props.title}</h1>
         <button onClick={toggleModal}>More</button>
       </div>
