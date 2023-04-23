@@ -7,12 +7,14 @@ export const BooksSection = (props) => {
 
   useEffect(() => {
     fetch(
-      'https://www.googleapis.com/books/v1/volumes?q=subject:fiction&maxResults=15&country=US&key=AIzaSyCOdBW17XswV2lIzACKPq0HCsyaXT7QhWI'
+      'https://www.googleapis.com/books/v1/volumes?q=subject:fiction&maxResults=20&country=US&key=AIzaSyCOdBW17XswV2lIzACKPq0HCsyaXT7QhWI'
     )
       .then((res) => res.json())
       .then((data) => {
         const books = data.items.filter(
-          (book) => book.saleInfo.saleability !== 'NOT_FOR_SALE'
+          (book) =>
+            book.saleInfo.saleability !== 'NOT_FOR_SALE' &&
+            book.volumeInfo.authors !== undefined
         );
         setBooksData(books);
         console.log(books);
