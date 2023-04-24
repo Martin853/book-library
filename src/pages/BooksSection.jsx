@@ -17,7 +17,6 @@ export const BooksSection = (props) => {
             book.volumeInfo.authors !== undefined
         );
         setBooksData(books);
-        console.log(books);
       });
   }, []);
 
@@ -34,12 +33,13 @@ export const BooksSection = (props) => {
     <div id="book-section-container">
       {filteredBooks.map((book) => (
         <BookCard
-          key={book.id}
           title={book.volumeInfo.title}
           author={book.volumeInfo.authors['0']}
           description={book.volumeInfo.description}
           price={book.saleInfo.listPrice.amount}
           image={book.volumeInfo.imageLinks.smallThumbnail}
+          key={book.id}
+          id={book.id}
         />
       ))}
     </div>

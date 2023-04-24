@@ -1,11 +1,15 @@
 import classes from './BookModal.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
+import { ShopContext } from '../context/ShopContext.jsx';
+import { useContext } from 'react';
 
 export const BookModal = (props) => {
   const toggleState = () => {
     props.setState(!props.state);
   };
+
+  const { addToCart } = useContext(ShopContext);
 
   return (
     <div className={classes.modal}>
@@ -26,7 +30,9 @@ export const BookModal = (props) => {
         <h2>By {props.author}</h2>
         <p className={classes.description}>{props.description}</p>
         <p>Price: ${props.price}</p>
-        <button className={classes.button}>Add to Cart</button>
+        <button className={classes.button} onClick={() => addToCart(props.id)}>
+          Add to Cart
+        </button>
       </div>
     </div>
   );

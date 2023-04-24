@@ -1,18 +1,17 @@
 import classes from './ShoppingCart.module.css';
 import { EmptyCart } from '../components/EmptyCart';
-import { useState } from 'react';
 import { ShoppingCartContainer } from '../components/ShoppingCartContainer';
+import { ShopContext } from '../context/ShopContext';
+import { useContext } from 'react';
 
 export const ShoppingCart = () => {
-  const [cartItems, setCartItems] = useState([]);
+  const { cartItems } = useContext(ShopContext);
+
+  const hasItems = Object.values(cartItems).some((value) => value > 0);
 
   return (
     <div className={classes.container}>
-      {cartItems.length === 0 ? (
-        <EmptyCart />
-      ) : (
-        <ShoppingCartContainer cartItems={cartItems} />
-      )}
+      {hasItems ? <ShoppingCartContainer /> : <EmptyCart />}
     </div>
   );
 };

@@ -25,6 +25,7 @@ export const BookCard = (props) => {
           price={props.price}
           state={modal}
           setState={setModal}
+          id={props.id}
         />
       )}
     </>
